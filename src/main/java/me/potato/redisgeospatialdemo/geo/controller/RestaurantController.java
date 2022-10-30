@@ -17,6 +17,6 @@ public class RestaurantController {
 
     @GetMapping("{zip}")
     public Flux<Restaurant> getRestaurants(@PathVariable String zip) {
-        return this.service.getRestaurants(zip);
+        return this.service.getRestaurants(zip).log();
     }
 }
